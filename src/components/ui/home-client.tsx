@@ -59,10 +59,10 @@ export function HomeClient() {
           </nav>
 
           {/* Hero — text + robot anchored to bottom */}
-          <div className="relative flex flex-1 items-end justify-center overflow-visible">
+          <div className="relative flex flex-1 flex-col items-center justify-between overflow-visible md:justify-end">
 
-            {/* Hero text */}
-            <div className="absolute top-6 md:top-14 left-1/2 -translate-x-1/2 z-20 w-full max-w-3xl px-6 text-center pointer-events-none">
+            {/* Hero text — in flow on mobile, overlay on desktop */}
+            <div className="z-20 w-full max-w-3xl px-6 pt-6 text-center pointer-events-none md:absolute md:top-14 md:left-1/2 md:-translate-x-1/2 md:pt-0">
               <h1 className="fade-up text-3xl md:text-6xl font-bold text-white leading-tight mb-4" style={{ animationDelay: "0.15s" }}>
                 {t.home.heroTitle}
               </h1>
@@ -86,7 +86,7 @@ export function HomeClient() {
             </div>
 
             {/* Robot — mix-blend-screen makes the canvas black bg transparent so waves show through */}
-            <div className="relative w-full max-w-3xl h-[560px] md:h-[820px] mix-blend-screen">
+            <div className="relative w-full max-w-3xl h-[380px] md:h-[820px] mix-blend-screen">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"

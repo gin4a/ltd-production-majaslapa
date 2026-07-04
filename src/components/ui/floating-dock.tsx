@@ -36,23 +36,25 @@ const FloatingDockMobile = ({
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 flex flex-col gap-2 z-50"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-1 rounded-2xl bg-black/95 backdrop-blur-md border border-white/15 p-2 shadow-2xl shadow-black/60"
           >
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10, transition: { delay: idx * 0.05 } }}
-                transition={{ delay: idx * 0.05 }}
+                initial={{ opacity: 0, x: -6 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.04 }}
               >
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="h-10 rounded-full bg-neutral-900/95 backdrop-blur-sm border border-white/10 flex items-center gap-2 px-3 shadow-lg shadow-black/40"
+                  className="h-11 rounded-xl flex items-center gap-3 px-3 hover:bg-white/10 active:bg-white/15 transition-colors"
                 >
                   <div className="h-4 w-4 shrink-0">{item.icon}</div>
-                  <span className="text-xs text-white/80 font-medium whitespace-nowrap pr-1">{item.title}</span>
+                  <span className="text-sm text-white/90 font-medium whitespace-nowrap pr-2">{item.title}</span>
                 </Link>
               </motion.div>
             ))}
