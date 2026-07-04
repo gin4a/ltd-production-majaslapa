@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
@@ -29,48 +30,36 @@ const FloatingDockMobile = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   return (
-    <div className={cn("relative block md:hidden", className)}>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            layoutId="nav"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-1 rounded-2xl bg-black/95 backdrop-blur-md border border-white/15 p-2 shadow-2xl shadow-black/60"
-          >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: -6 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.04 }}
-              >
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="h-11 rounded-xl flex items-center gap-3 px-3 hover:bg-white/10 active:bg-white/15 transition-colors"
-                >
-                  <div className="h-4 w-4 shrink-0">{item.icon}</div>
-                  <span className="text-sm text-white/90 font-medium whitespace-nowrap pr-2">{item.title}</span>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center"
-      >
-        <span className="flex flex-col gap-1 items-center justify-center">
-          <span className="block w-4 h-px bg-white/70" />
-          <span className="block w-4 h-px bg-white/70" />
-          <span className="block w-4 h-px bg-white/70" />
-        </span>
-      </button>
+    <div
+      className={cn(
+        "md:hidden fixed bottom-0 inset-x-0 z-50 pointer-events-auto",
+        "border-t border-white/10 bg-black/90 backdrop-blur-md",
+        className
+      )}
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
+      <div className="flex items-stretch justify-around px-1 py-1.5">
+        {items.map((item) => {
+          const active = pathname === item.href;
+          return (
+            <Link
+              key={item.title}
+              href={item.href}
+              className={cn(
+                "flex flex-col items-center gap-1 px-2 py-1.5 rounded-xl min-w-0 transition-colors",
+                active ? "text-white" : "text-neutral-500 active:text-white"
+              )}
+            >
+              <div className={cn("h-5 w-5", active ? "opacity-100" : "opacity-60")}>{item.icon}</div>
+              <span className={cn("text-[10px] leading-none font-medium truncate max-w-[70px]", active ? "text-white" : "text-neutral-500")}>
+                {item.title.split(" ")[0].replace("&", "")}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -28,12 +28,12 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
     <main className="relative w-full min-h-screen overflow-x-hidden bg-black">
       <MeshBackground />
 
-      <div className="relative z-10 w-full min-h-screen flex flex-col">
+      <div className="relative z-10 w-full min-h-screen flex flex-col pb-16 md:pb-0">
         {/* Nav */}
         <nav className="relative z-30 flex items-center justify-between px-4 py-4 md:px-16">
           <a href="/"><LtdLogo size="sm" /></a>
-          <div className="absolute left-1/2 -translate-x-1/2">
-            <FloatingDock items={NAV_LINKS} />
+          <div className="absolute inset-x-0 top-2 z-30 flex justify-center pointer-events-none">
+            <FloatingDock items={NAV_LINKS} desktopClassName="pointer-events-auto" />
           </div>
           <LangSwitcher />
         </nav>
