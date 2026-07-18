@@ -89,7 +89,7 @@ export function HomeClient() {
             </div>
 
             {/* Robot — mix-blend-screen makes the canvas black bg transparent so waves show through */}
-            <div className="relative w-full max-w-3xl h-[380px] md:h-[820px] mix-blend-screen">
+            <div className="relative w-full max-w-3xl h-[380px] md:h-[640px] mix-blend-screen">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"
