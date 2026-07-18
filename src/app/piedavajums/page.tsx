@@ -85,10 +85,44 @@ export default function Piedavajums() {
           </div>
         </section>
 
+        {/* Services — both offerings */}
+        <section className="px-6 md:px-16 pb-14 max-w-5xl mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-5">
+            {l.services.map((s, i) => (
+              <div
+                key={s.name}
+                className="fade-up flex flex-col bg-white/5 border border-white/15 rounded-3xl p-7 md:p-8 hover:border-white/35 hover:-translate-y-1 transition-all duration-300"
+                style={{ animationDelay: `${0.15 + i * 0.15}s` }}
+              >
+                <div className="flex items-baseline justify-between gap-3 mb-3">
+                  <h2 className="text-white font-bold text-xl md:text-2xl">{s.name}</h2>
+                  <span className="text-neutral-300 text-sm font-semibold whitespace-nowrap border border-white/15 rounded-full px-3 py-1">{s.price}</span>
+                </div>
+                <p className="text-neutral-400 text-sm leading-relaxed mb-5">{s.desc}</p>
+                <ul className="flex flex-col gap-2.5 mb-7 flex-1">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-neutral-300">
+                      <Check className="w-4 h-4 shrink-0 mt-0.5 text-white" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#forma"
+                  onClick={() => setForm((prev) => ({ ...prev, service: k.services[i] }))}
+                  className="inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-neutral-200 transition-colors"
+                >
+                  {s.cta} <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Stats */}
         <section className="px-6 md:px-16 pb-14 max-w-5xl mx-auto w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {r.results.map((res, i) => (
+            {l.stats.map((res, i) => (
               <div key={res.label} className="fade-up bg-white/5 border border-white/10 rounded-2xl p-5 text-center" style={{ animationDelay: `${0.1 + i * 0.1}s` }}>
                 <p className="text-2xl md:text-3xl font-bold text-white mb-1.5">{res.metric}</p>
                 <p className="text-neutral-500 text-[11px] leading-snug">{res.label}</p>
