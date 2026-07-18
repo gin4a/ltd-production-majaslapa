@@ -10,6 +10,7 @@ import { LtdLogo } from "@/components/ui/ltd-logo"
 import { FloatingDock } from "@/components/ui/floating-dock"
 import { LangSwitcher } from "@/components/ui/lang-switcher"
 import { LogoCloud } from "@/components/ui/logo-cloud"
+import { PromoBanner } from "@/components/ui/promo-banner"
 import { useLang } from "@/lib/i18n"
 import {
   IconHome,
@@ -48,6 +49,8 @@ export function HomeClient() {
         <MeshBackground />
 
         <div className="relative z-10 w-full min-h-screen flex flex-col pb-16 md:pb-0">
+
+          <PromoBanner />
 
           {/* Top nav */}
           <nav className="relative flex items-center justify-between px-4 py-4 md:px-16">

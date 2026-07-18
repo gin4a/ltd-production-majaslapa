@@ -4,6 +4,7 @@ import { MeshBackground } from "@/components/ui/mesh-background"
 import { LtdLogo } from "@/components/ui/ltd-logo"
 import { FloatingDock } from "@/components/ui/floating-dock"
 import { LangSwitcher } from "@/components/ui/lang-switcher"
+import { PromoBanner } from "@/components/ui/promo-banner"
 import { useLang } from "@/lib/i18n"
 import {
   IconHome,
@@ -29,6 +30,8 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       <MeshBackground />
 
       <div className="relative z-10 w-full min-h-screen flex flex-col pb-16 md:pb-0">
+        <PromoBanner />
+
         {/* Nav */}
         <nav className="relative z-30 flex items-center justify-between px-4 py-4 md:px-16">
           <a href="/"><LtdLogo size="sm" /></a>

@@ -25,6 +25,10 @@ const translations = {
       ctaPrimary: "Bezmaksas konsultācija",
       ctaSecondary: "Mūsu darbi",
     },
+    banner: {
+      text: "Bezmaksas konsultācija — mājas lapa vai reklāma tavam biznesam",
+      cta: "Pieteikties",
+    },
     landing: {
       badge: "Mājas lapas & Reklāma · LTD Production",
       headline1: "Mājas lapa un reklāma,",
@@ -225,6 +229,10 @@ const translations = {
       heroSub: "We help businesses grow with modern websites, e-commerce stores and targeted ad campaigns.",
       ctaPrimary: "Free consultation",
       ctaSecondary: "Our work",
+    },
+    banner: {
+      text: "Free consultation — a website or ads for your business",
+      cta: "Apply now",
     },
     landing: {
       badge: "Websites & Advertising · LTD Production",
