@@ -39,7 +39,7 @@ const translations = {
       services: [
         {
           name: "Website izveide",
-          price: "no €649",
+          price: "no €389",
           desc: "No vienkāršas landing page līdz pilnam e-veikalam — ātras, mūsdienīgas un pārdodošas mājas lapas.",
           features: ["Unikāls dizains bez šabloniem", "Mobilā + datora versija", "SEO optimizācija", "Gatava 7–14 darba dienās", "Bezmaksas atbalsts pēc palaišanas"],
           cta: "Gribu mājas lapu",
@@ -88,19 +88,19 @@ const translations = {
       ],
       plans: [
         {
-          name: "Landing Page", price: "649", badge: null,
+          name: "Landing Page", price: "389", badge: null,
           description: "Vienas lapas mājas lapa — ideāla produktu vai pakalpojumu prezentācijai. Gatava 5 darba dienu laikā.",
           features: ["1 lapa (pilna garuma)", "Responsīvs dizains (mobilis + desktop)", "Kontaktforma ar e-pasta saņemšanu", "Pamata SEO optimizācija", "Google Maps integrācija", "Ātruma optimizācija", "1 mēneša bezmaksas atbalsts"],
           highlighted: false,
         },
         {
-          name: "Business Website", price: "1299", badge: "Populārākais",
+          name: "Business Website", price: "779", badge: "Populārākais",
           description: "Pilnvērtīga mājas lapa uzņēmumam ar vairākām sadaļām, CMS un SEO — kas patiešām pārdod.",
           features: ["Līdz 10 lapām", "Unikāls pielāgots dizains", "CMS — patstāvīgi rediģē saturu", "Pilna SEO pakotne + sitemap", "Google Analytics 4", "Kontaktforma + rezervācija", "SSL sertifikāts", "3 mēnešu bezmaksas atbalsts"],
           highlighted: true,
         },
         {
-          name: "E-veikals", price: "2499", badge: null,
+          name: "E-veikals", price: "1499", badge: null,
           description: "Pilnīgi funkcionējošs interneta veikals ar drošiem maksājumiem, produktu pārvaldību un automātiku.",
           features: ["Neierobežots produktu skaits", "Stripe / PayPal / kartes maksājumi", "Produktu kategorijas & filtri", "Pasūtījumu pārvaldības sistēma", "Automātiskas e-pasta kvītis", "Krājumu pārvaldība", "Mobilā optimizācija", "6 mēnešu bezmaksas atbalsts"],
           highlighted: false,
@@ -244,7 +244,7 @@ const translations = {
       services: [
         {
           name: "Website development",
-          price: "from €649",
+          price: "from €389",
           desc: "From a simple landing page to a full e-commerce store — fast, modern, conversion-focused websites.",
           features: ["Unique design, no templates", "Mobile + desktop versions", "SEO optimisation", "Ready in 7–14 business days", "Free support after launch"],
           cta: "I want a website",
@@ -293,19 +293,19 @@ const translations = {
       ],
       plans: [
         {
-          name: "Landing Page", price: "649", badge: null,
+          name: "Landing Page", price: "389", badge: null,
           description: "Single-page website — ideal for showcasing a product or service. Ready in 5 business days.",
           features: ["1 full-length page", "Responsive design (mobile + desktop)", "Contact form with email delivery", "Basic SEO optimisation", "Google Maps integration", "Speed optimisation", "1 month free support"],
           highlighted: false,
         },
         {
-          name: "Business Website", price: "1299", badge: "Most popular",
+          name: "Business Website", price: "779", badge: "Most popular",
           description: "Full-featured multi-page website with CMS and SEO — built to convert visitors into clients.",
           features: ["Up to 10 pages", "Custom unique design", "CMS — edit content yourself", "Full SEO package + sitemap", "Google Analytics 4", "Contact form + booking", "SSL certificate", "3 months free support"],
           highlighted: true,
         },
         {
-          name: "E-commerce", price: "2499", badge: null,
+          name: "E-commerce", price: "1499", badge: null,
           description: "Fully functional online store with secure payments, product management and automation.",
           features: ["Unlimited products", "Stripe / PayPal / card payments", "Product categories & filters", "Order management system", "Automated email receipts", "Inventory management", "Mobile optimisation", "6 months free support"],
           highlighted: false,
